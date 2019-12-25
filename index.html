@@ -12,23 +12,28 @@
 <body>
 
 	<!-- Navbar start -->
-	<nav class="uk-navbar-container" uk-navbar>
-		<div class="uk-navbar-left uk-margin-left">
-			<a href="index.html"><img src="assets/logo.png" style="max-height: 50px" ></a>
-			<ul class="uk-navbar-nav">
-				<li>PADDY-EDITOR</li>
-			</ul>
+	<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+		<div class="uk-background-secondary uk-light">
+			<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+				<div class="uk-navbar-left uk-margin-left">
+					<a href="index.html"><img src="assets/logo.png" style="max-height: 55px" ></a>
+					<ul class="uk-navbar-nav">
+						<li>PADDY-EDITOR</li>
+					</ul>
+				</div>
+				<div class="uk-navbar-right">
+					<ul class="uk-navbar-nav">
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="documentation/getstarted.html">DOCUMENTATION</a></li>
+						<li><a href="download.html"> DOWNLOAD</a></li>
+					</ul>
+				</div>
+			</nav>
 		</div>
-		<div class="uk-navbar-right">
-			<ul class="uk-navbar-nav">
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="documentation/getstarted.html">DOCUMENTATION</a></li>
-				<li><a href="download.html"> DOWNLOAD</a></li>
-			</ul>
-		</div>
-	</nav>
+	</div>
 	<!-- Navbar end -->
-
+	<div class="uk-background-secondary">
+	<br>
 	<!-- Cover start -->
 	<div class=" uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
 		uk-height-viewport="min-height: 400" data-src="assets/cover.png" uk-img>
@@ -45,7 +50,7 @@
 		</div>
 	</div>
 	<!-- Cover end -->
-
+	<br>
 	<!-- Features card start -->
 	<div class="uk-card uk-card-secondary uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
 		<div class="uk-flex-last@s uk-card-media-right uk-cover-container">
@@ -93,7 +98,7 @@
 		<div>
 			<div class="uk-card-body">
 				<div class="uk-child-width-expand" uk-grid>
-					<div class="uk-text-left">
+					<div class="uk-text-center">
 						<h3>Paddy-Editor</h3>
 						<hr>
 						<a href="https://github.com/BlackGoku36/Paddy-Editor">Github</a>
@@ -105,7 +110,7 @@
 						<a href="https://github.com/BlackGoku36/Paddy-Editor-Website">Github</a>
 						<br><a href="https://getuikit.com/">UIKit</a>
 					</div>
-					<div class="uk-text-right">
+					<div class="uk-text-center">
 						<h3>Contact</h3>
 						<hr>
 						<a href="mailto:urjasvisuthar@gmail.com">Mail</a>
@@ -115,7 +120,9 @@
 			</div>
 		</div>
 	</div>
+	<br>
 	<!-- Footer content end -->
+	</div>
 </body>
 
 </html>
