@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Paddy-Editor | Integration</title>
+        <title>Paddy-Editor | Compiling</title>
         <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="../css/uikit.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/atom-one-dark.css">
@@ -43,7 +43,7 @@
                             <li><a href="getstarted.html">Get Started</a></li>
                             <li class="uk-active"><a href="integration.html">Integration</a></li>
                             <li><a href="plugins.html">Plugins</a></li>
-                            <li><a href="compile.html">Compiling the editor</a></li>
+                            <li class="uk-active"><a href="compile.html">Compiling the editor</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,81 +51,41 @@
 
                 <div class="uk-width-3-4">
                     <div class=" uk-card uk-card-secondary uk-card-body">
-                        <h1 class="uk-card-title">INTEGRATION</h1>
-                        <p>Integrating paddy-editor in framework/engine is easy as paddy editor exports to json, which can be easily parsed from.</p>
-                        <p>To get clear overview of file structure, you can find it at <a href="https://github.com/BlackGoku36/Paddy-Editor/blob/master/Sources/paddy/data/Data.hx"> Data.hx</a> and <a href="https://github.com/BlackGoku36/Paddy-Editor/blob/842ad34910bc3d9d71295b6512a13b668d326fe4/Sources/paddy/Paddy.hx#L5"> Paddy.hx.</a></p>
-                        <pre><code class="haxe">
-//------paddy.json-------
-typedef PaddyData = {
-    var name: String;
-    var window: String;
-    var scene: String;
-    var ?theme: zui.Themes.TTheme;
-}
-//------paddy.json-------
-
-//------window.json-------
-typedef WindowData = {
-    var name: String;
-    var width: Int;
-    var height: Int;
-    var windowMode: Int;
-    var clearColor: Array<Int>;
-}
-//------window.json-------
-
-//------scene.json-------
-typedef SceneData = {
-    var name: String;
-    var objects: Array<ObjectData>;
-    var assets: Array<AssetData>;
-    var ?scripts: Array<ScriptData>;
-    var ?canvasRef: String;
-}
-
-typedef AssetData = {
-    var name: String;
-    var type: AssetType;
-    var value: Dynamic;// Ignore this when parsing
-    var path: String;
-}
-
-@:enum abstract AssetType(Int) from Int to Int {
-    var Image = 0;
-    var Font = 0;
-    var Sound = 1;
-    var Blob = 1;
-}
-
-typedef ObjectData = {
-    var id: Int;
-    var name: String;
-    var x: Float;
-    var y: Float;
-    var height: Float;
-    var width: Float;
-    var isSprite: Bool;
-    var ?rotation: Float;
-    var ?visible: Bool;
-    var ?culled: Bool;
-    var ?spriteRef: String;
-    var ?color: Array<Int>;
-    var ?scripts: Array<ScriptData>;
-}
-
-typedef NodeData = {
-    var name: String;
-    var nodes: Nodes;
-    var nodeCanvas: TNodeCanvas;
-}
-
-typedef ScriptData = {
-    var name: String;
-    var scriptRef: String;
-}                            
-//------scene.json-------
-                        </code></pre>
+                        <h1 class="uk-card-title">Compiling the editor</h1>
+                        <ol>
+                            <li>Download <a href="https://haxe.org/">Haxe</a></li>
+                            <li>Get <a href="https://kha.tech/">Kha</a></li>
+                            <li>
+                                Get Paddy-Editor:
+                                <br>
+                                <pre><code class="bash"> git clone --recursive https://github.com/BlackGoku36/Paddy-Editor.git
+ cd Paddy-Editor
+ git submodule foreach --recursive git pull origin master
+                                </code></pre>
+                            </li>
+                            <li>
+                                Now for compiling:
+                                <br>
+                                <ul>
+                                    <li> MacOS/Linux:
+                                        <br>
+                                        <pre><code class="bash"> # You can use Vulkan for linux (not tried), but use opengl for macos because of Zui's nodes bug.
+ node Kha/make krom -g opengl
+ path/to/krom_binary build/krom build/krom-resources
+                                        </code></pre>
+                                    </li>
+                                    <li> Windows:
+                                        <br>
+                                        <pre><code class="bash"> node Kha/make krom
+ path/to/krom_binary build/krom build/krom-resources
+                                        </code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
                     </div>
+                    <br>
+                    <br>
                     <br>
                 </div>
             </div>
