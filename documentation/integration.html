@@ -4,8 +4,15 @@
         <title>Paddy-Editor | Integration</title>
         <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="../css/uikit.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/atom-one-dark.css">
         <script src="../js/uikit.min.js"></script>
         <script src="../js/uikit-icons.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/highlightjs-line-numbers.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+            hljs.initLineNumbersOnLoad();
+        </script>
     </head>
     <body>
         <!-- Navbar start -->
@@ -27,29 +34,100 @@
             </nav>
         </div>
         <!-- Navbar end -->
-
+        <div class="uk-background-secondary">
         <!-- Nav sidebar start -->
-        <div class="uk-grid-collapse" uk-grid>
-            <div class="uk-width-1-4">
-                <div class="uk-width-auto uk-card uk-card-default uk-card-body">
-                    <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
-                        <li><a href="getstarted.html">Get Started</a></li>
-                        <li class="uk-active"><a href="integration.html">Integration</a></li>
-                        <li><a href="plugins.html">Plugins</a></li>
-                        <li><a href="customnodes.html">Custom Nodes</a></li>
-                    </ul>
+            <div uk-grid>
+                <div class="uk-width-1-4">
+                    <div class="uk-width-auto uk-card uk-card-secondary uk-card-body">
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
+                            <li><a href="getstarted.html">Get Started</a></li>
+                            <li class="uk-active"><a href="integration.html">Integration</a></li>
+                            <li><a href="plugins.html">Plugins</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- Nav sidebar end -->
+                <!-- Nav sidebar end -->
 
-            <div class="uk-width-3-4">
-                <div class=" uk-card uk-card-default uk-card-body">
-                    <h1 class="uk-card-title">INTEGRATION</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="uk-width-3-4">
+                    <div class=" uk-card uk-card-secondary uk-card-body">
+                        <h1 class="uk-card-title">INTEGRATION</h1>
+                        <p>Integrating paddy-editor in framework/engine is easy as paddy editor exports to json, which can be easily parsed from.</p>
+                        <p>To get clear overview of file structure, you can find it at <a href="https://github.com/BlackGoku36/Paddy-Editor/blob/master/Sources/paddy/data/Data.hx"> Data.hx</a> and <a href="https://github.com/BlackGoku36/Paddy-Editor/blob/842ad34910bc3d9d71295b6512a13b668d326fe4/Sources/paddy/Paddy.hx#L5"> Paddy.hx.</a></p>
+                        <pre><code class="haxe">
+//------paddy.json-------
+typedef PaddyData = {
+    var name: String;
+    var window: String;
+    var scene: String;
+    var ?theme: zui.Themes.TTheme;
+}
+//------paddy.json-------
+
+//------window.json-------
+typedef WindowData = {
+    var name: String;
+    var width: Int;
+    var height: Int;
+    var windowMode: Int;
+    var clearColor: Array<Int>;
+}
+//------window.json-------
+
+//------scene.json-------
+typedef SceneData = {
+    var name: String;
+    var objects: Array<ObjectData>;
+    var assets: Array<AssetData>;
+    var ?scripts: Array<ScriptData>;
+    var ?canvasRef: String;
+}
+
+typedef AssetData = {
+    var name: String;
+    var type: AssetType;
+    var value: Dynamic;// Ignore this when parsing
+    var path: String;
+}
+
+@:enum abstract AssetType(Int) from Int to Int {
+    var Image = 0;
+    var Font = 0;
+    var Sound = 1;
+    var Blob = 1;
+}
+
+typedef ObjectData = {
+    var id: Int;
+    var name: String;
+    var x: Float;
+    var y: Float;
+    var height: Float;
+    var width: Float;
+    var isSprite: Bool;
+    var ?rotation: Float;
+    var ?visible: Bool;
+    var ?culled: Bool;
+    var ?spriteRef: String;
+    var ?color: Array<Int>;
+    var ?scripts: Array<ScriptData>;
+}
+
+typedef NodeData = {
+    var name: String;
+    var nodes: Nodes;
+    var nodeCanvas: TNodeCanvas;
+}
+
+typedef ScriptData = {
+    var name: String;
+    var scriptRef: String;
+}                            
+//------scene.json-------
+                        </code></pre>
+                    </div>
+                    <br>
                 </div>
             </div>
         </div>
-
     </body>
 </html>

@@ -4,15 +4,8 @@
         <title>Paddy-Editor | Get Started</title>
         <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="../css/uikit.min.css" />
-        <link rel="stylesheet" type="text/css" href="../css/atom-one-dark.css">
         <script src="../js/uikit.min.js"></script>
         <script src="../js/uikit-icons.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
-        <script src="../js/highlightjs-line-numbers.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad();
-            hljs.initLineNumbersOnLoad();
-        </script>
     </head>
     <body>
         <!-- Navbar start -->
@@ -34,35 +27,94 @@
             </nav>
         </div>
         <!-- Navbar end -->
-
+        <div class="uk-background-secondary">
         <!-- Nav sidebar start -->
-        <div class="uk-grid-collapse" uk-grid>
-            <div class="uk-width-1-4">
-                <div class="uk-width-auto uk-card uk-card-default uk-card-body">
-                    <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
-                        <li class="uk-active"><a href="getstarted.html">Get Started</a></li>
-                        <li><a href="integration.html">Integration</a></li>
-                        <li><a href="plugins.html">Plugins</a></li>
-                        <li><a href="customnodes.html">Custom Nodes</a></li>
-                    </ul>
+            <div uk-grid>
+                <div class="uk-width-1-4">
+                    <div class="uk-width-auto uk-card uk-card-secondary uk-card-body">
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
+                            <li class="uk-active"><a href="getstarted.html">Get Started</a></li>
+                            <li><a href="integration.html">Integration</a></li>
+                            <li><a href="plugins.html">Plugins</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- Nav sidebar end -->
+                <!-- Nav sidebar end -->
 
-            <div class="uk-width-3-4">
-                <div class=" uk-card uk-card-default uk-card-body">
-                    <h1 class="uk-card-title">GET STARTED</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <pre><code class="haxe">public static var test = 50;
-trace(test);
-// Comment
-                    </code></pre>
+                <div class="uk-width-3-4">
+                    <div class=" uk-card uk-card-secondary uk-card-body">
+                        <h1 class="uk-card-title">GET STARTED</h1>
+                        <img src="../assets/labeledUI.png"></a>
+                        <sub>UI of Paddy-Editor</sub>
+                        <p>UI of Paddy-Editor is pretty simple</p>
+                        <p><strong>Menu Bar:</strong>
+                            <ul>
+                                <li><strong>New:</strong> Start new project</li>
+                                <li><strong>Open:</strong> Opens project</li>
+                                <li><strong>Save:</strong> Save project</li>
+                            </ul>
+                        </p>
+                        <p><strong>Build options:</strong>
+                            <ul>
+                                <li><strong>Build:</strong> Export the project</li>
+                                <li><i>Adding custom option is possible through plugins</i></li>
+                            </ul>
+                        </p>
+                        <p><strong>Outliner:</strong>
+                            <ul>
+                                <li><strong>Scene:</strong> List of all objects in Scene
+                                    <ul>
+                                        <li><strong>Name:</strong> Name of object.</li>
+                                        <li><strong>'+':</strong> Create new object in scene.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Nodes:</strong> List of all nodes groups.
+                                    <ul>
+                                        <li><strong>Name:</strong> Name of node group.</li>
+                                        <li><strong>'+':</strong> Creates new node group.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <p><strong>Editor:</strong>
+                            <ul>
+                                <li><strong>2D:</strong> Our 2d scene editor space, move, scale, rotate objects around here.
+                                    <ul>
+                                        <li><strong>Lock:</strong> lock the editor so that it doesn't move.</li>
+                                        <li><strong>Reset Pos:</strong> reset position of editor to it original position.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Nodes:</strong> Our node editor, create logic nodes here.
+                                    <ul>
+                                        <li><strong><i>Panel:</i></strong> List of default nodes</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <p><strong>Properties:</strong>
+                            <ul>
+                                <li><strong>Properties:</strong> Properties of window and objects</li>
+                                <li><strong>Editor:</strong> Editor settings, things such as editor's grid customization are here and theme can also be set from here.</li>
+                                <li><strong>Plugins:</strong> Manage plugins
+                                    <ul>
+                                        <li><strong>Name:</strong> Name of plugin file</li>
+                                        <li><strong>'+'</strong> Add the plugins</li>
+                                        <li><strong><i>List</i></strong> List of active plugins</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <p><strong>Assets:</strong>
+                            <ul>
+                                <li><strong>Assets:</strong> List of imported asset, asset type are in their own categories</li>
+                                <li><strong>'>_':</strong> Enter your terminal command.</li>
+                            </ul>
+                        </p>
+                        <p><strong>File Browser:</strong> File browser to import assets</p>
+                    </div>
+                <br>
                 </div>
             </div>
         </div>
     </body>
 </html>
-<!-- agate
-atom one dark
-solarized light -->
